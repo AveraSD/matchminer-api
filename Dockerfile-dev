@@ -12,4 +12,4 @@ RUN mkdir /matchminerAPI
 COPY ./requirements.txt /matchminerAPI/requirements.txt
 WORKDIR /matchminerAPI
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt && pip uninstall -y bson && pip install pymongo==3.10

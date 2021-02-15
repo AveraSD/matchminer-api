@@ -78,3 +78,5 @@ python-xmlsec/*
 # mypy
 .mypy_cache
 dev_data/*
+
+matchminer-api.code-workspace

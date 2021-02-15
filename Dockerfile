@@ -2,7 +2,6 @@ FROM python:3.7
 # install ubuntu packages.
 RUN DEBIAN_FRONTEND=noninteractive apt-get update --fix-missing && apt-get install -y \
     build-essential \
-    checkinstall \
     autoconf \
     libtool \
     pkg-config \
@@ -58,7 +57,7 @@ COPY ./gunicorn.conf.py /api/gunicorn.conf.py
 
 WORKDIR /api
 COPY ./requirements.txt /api/requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt && pip uninstall -y bson && pip install pymongo==3.10
 
 # setup entrypoint.
 COPY ./entrypoint.sh /
