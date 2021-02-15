@@ -48,7 +48,8 @@ sleep 10
 docker-compose build mm-api
 echo "Setup elasticsearch settings, mappings"
 
-docker-compose run --rm mm-api python pymm_run.py reset-elasticsearch
+#docker-compose run --rm mm-api python pymm_run.py reset-elasticsearch
+# this above line errors out with "Failed to establish a new connection"
 echo "DONE."
 echo ""
 
