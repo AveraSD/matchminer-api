@@ -50,6 +50,7 @@ COPY ./filters_config /api/filters_config
 COPY ./cerberus1 /api/cerberus1
 COPY ./pymm_run.py /api/pymm_run.py
 COPY ./elasticsearch /api/elasticsearch
+COPY ./secrets_json_dev.json /api/secrets_json_dev.json
 
 # gunicorn configs
 COPY ./wsgi.py /api/wsgi.py
@@ -57,7 +58,7 @@ COPY ./gunicorn.conf.py /api/gunicorn.conf.py
 
 WORKDIR /api
 COPY ./requirements.txt /api/requirements.txt
-RUN pip install -r requirements.txt && pip uninstall -y bson && pip install pymongo==3.10
+RUN pip install -r requirements.txt 
 
 # setup entrypoint.
 COPY ./entrypoint.sh /
