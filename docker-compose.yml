@@ -5,7 +5,7 @@ services:
     restart: "no"
     build:
       context: .
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile
     # When developing locally, disable auth. By default, API is configured
     # to work with Okta's SSO saml system.
     command: python pymm_run.py serve --no-auth
